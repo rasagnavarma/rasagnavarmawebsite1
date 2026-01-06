@@ -1,0 +1,169 @@
+.bio-section {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  padding: 100px 7.6923%;
+  position: relative;
+}
+
+.bio-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 50%, rgba(0, 255, 209, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.bio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.bio-header {
+  margin-bottom: 60px;
+}
+
+.bio-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.bio-divider {
+  width: 120px;
+  height: 3px;
+  background: var(--brand-primary);
+  box-shadow: 0 0 20px var(--brand-glow);
+}
+
+.bio-narrative {
+  margin-bottom: 80px;
+}
+
+.narrative-paragraph {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.narrative-paragraph.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.narrative-paragraph:first-child {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.bio-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  padding: 40px 30px;
+  background: rgba(18, 18, 18, 0.6);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--brand-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.value-card:hover::before {
+  transform: scaleX(1);
+}
+
+.value-card:hover {
+  border-color: var(--brand-primary);
+  background: rgba(0, 255, 209, 0.05);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px var(--brand-glow);
+}
+
+.value-icon {
+  color: var(--brand-primary);
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.value-card:hover .value-icon {
+  transform: scale(1.1);
+}
+
+.value-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.value-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .bio-section {
+    padding: 80px 20px;
+  }
+  
+  .bio-title {
+    font-size: 36px;
+  }
+  
+  .narrative-paragraph {
+    font-size: 20px;
+  }
+  
+  .narrative-paragraph:first-child {
+    font-size: 24px;
+  }
+  
+  .bio-values {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .bio-title {
+    font-size: 32px;
+  }
+  
+  .narrative-paragraph {
+    font-size: 18px;
+  }
+  
+  .narrative-paragraph:first-child {
+    font-size: 20px;
+  }
+}
