@@ -1,14 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import Spline from '@splinetool/react-spline';
-import { heroData } from '../mock';
+import axios from 'axios';
 import './HeroSection.css';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
+
 const HeroSection = () => {
-  const [counters, setCounters] = useState(heroData.metrics.map(() => 0));
+  const [heroData, setHeroData] = useState(null);
+  const [counters, setCounters] = useState([0, 0, 0, 0]);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!hasAnimated) {
+    const fetchHeroData = async () => {
+      try {
+        const response = await axios.get(`${API}/profile`);
+        setHeroData(response.data);
+        setCounters(response.data.metrics.map(() => 0));
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching hero data:', error);
+        setLoading(false);
+      }
+    };
+    fetchHeroData();
+  }, []);
+
+  useEffect(() => {
+    if (heroData && !hasAnimated) {
       setHasAnimated(true);
       heroData.metrics.forEach((metric, index) => {
         const duration = 2000;
@@ -30,7 +50,7 @@ const HeroSection = () => {
         }, duration / steps);
       });
     }
-  }, [hasAnimated]);
+  }, [heroData, hasAnimated]);
 
   return (
     <section className="hero-section">
