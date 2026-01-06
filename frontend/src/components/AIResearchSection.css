@@ -270,16 +270,6 @@
   font-size: 14px;
 }
 
-.gallery-note {
-  text-align: center;
-  font-size: 14px;
-  color: var(--text-muted);
-  font-style: italic;
-  padding: 20px;
-  background: rgba(157, 78, 221, 0.05);
-  border-left: 3px solid #9D4EDD;
-}
-
 /* Responsive Design */
 @media (max-width: 968px) {
   .ai-research-section {
