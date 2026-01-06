@@ -59,6 +59,16 @@ const BioSection = () => {
     Shield
   };
 
+  if (loading || !bioData) {
+    return (
+      <section className="bio-section" ref={sectionRef}>
+        <div className="bio-container">
+          <div className="loading-text">Loading...</div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="bio-section" ref={sectionRef}>
       <div className="bio-container">
