@@ -56,7 +56,10 @@ const BioSection = () => {
     Target,
     Users,
     TrendingUp,
-    Shield
+    Shield,
+    Award,
+    Brain,
+    Globe
   };
 
   if (loading || !bioData) {
