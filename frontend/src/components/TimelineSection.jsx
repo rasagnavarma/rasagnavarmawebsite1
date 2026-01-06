@@ -36,6 +36,16 @@ const TimelineSection = () => {
     }
   };
 
+  if (loading || timelineData.length === 0) {
+    return (
+      <section className="timeline-section" id="timeline">
+        <div className="timeline-container">
+          <div className="loading-text">Loading timeline...</div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="timeline-section" id="timeline">
       <div className="timeline-container">
