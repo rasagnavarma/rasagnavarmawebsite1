@@ -36,7 +36,7 @@ experiences = [
     {
         "id": 1,
         "company": "Salesforce",
-        "role": "Escalate Manager (Operations Senior Analyst)",
+        "role": "Escalate Manager (Operations Senior)",
         "team": "Critical Incident Center, Red Accounts",
         "dates": "June 2024 - Present",
         "color": "#00FFD1",
