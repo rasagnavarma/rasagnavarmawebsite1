@@ -49,6 +49,10 @@ const TimelineSection = () => {
 
   return (
     <section className="timeline-section" id="timeline">
+      <div className="spline-background-timeline">
+        <Spline scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode" />
+      </div>
+      
       <div className="timeline-container">
         <div className="timeline-header">
           <h2 className="timeline-title">Impact Timeline</h2>
