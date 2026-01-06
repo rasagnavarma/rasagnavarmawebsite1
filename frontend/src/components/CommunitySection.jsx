@@ -90,11 +90,11 @@ const CommunitySection = () => {
                 </div>
                 <div className="community-image-item">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/jk9jnifc_IMG_1911.heif" 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/e4l1hma9_Screenshot%202026-01-06%20at%201.29.50%20PM.jpg" 
                     alt="Leaders of India"
                     className="community-photo"
                   />
-                  <div className="image-caption">Leaders of India</div>
+                  <div className="image-caption">Lead India 2024</div>
                 </div>
                 <div className="community-image-item">
                   <img 
@@ -112,11 +112,11 @@ const CommunitySection = () => {
               <div className="community-images">
                 <div className="community-image-item">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/ae1ye95d_IMG_6770.heic" 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/q1b05tq2_IMG_6770.jpg" 
                     alt="College Speaking Session"
                     className="community-photo"
                   />
-                  <div className="image-caption">College Engagement</div>
+                  <div className="image-caption">College Speaking Session</div>
                 </div>
                 <div className="community-image-item">
                   <img 
