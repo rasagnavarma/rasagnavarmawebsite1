@@ -40,11 +40,11 @@ const SkillsSection = () => {
   }
 
   const skillCategories = [
-    { title: 'Platforms', items: skills.platforms, icon: Code },
-    { title: 'Programming', items: skills.programming, icon: Code },
+    { title: 'Leadership Excellence', items: skills.leadership, icon: UsersIcon },
+    { title: 'Salesforce Platforms', items: skills.platforms, icon: Code },
     { title: 'Tools & Technologies', items: skills.tools, icon: Wrench },
-    { title: 'Methodologies', items: skills.methodologies, icon: Target },
-    { title: 'Leadership', items: skills.leadership, icon: UsersIcon }
+    { title: 'Methodologies & Frameworks', items: skills.methodologies, icon: Target },
+    { title: 'Technical Skills', items: skills.programming, icon: Code }
   ];
 
   const certCategories = [
