@@ -82,7 +82,7 @@ const CommunitySection = () => {
               <div className="community-images">
                 <div className="community-image-item">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/1j1j2my3_4A8B1648.JPG" 
+                    src="/assets/emergent/1j1j2my3_4A8B1648.JPG" 
                     alt="UN India Hosting"
                     className="community-photo"
                   />
@@ -90,7 +90,7 @@ const CommunitySection = () => {
                 </div>
                 <div className="community-image-item">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/e4l1hma9_Screenshot%202026-01-06%20at%201.29.50%20PM.jpg" 
+                    src="/assets/emergent/e4l1hma9_Screenshot_2026-01-06_at_1.29.50_PM.jpg" 
                     alt="Leaders of India"
                     className="community-photo"
                   />
@@ -98,7 +98,7 @@ const CommunitySection = () => {
                 </div>
                 <div className="community-image-item">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/ik1xbx5s_b35a2da7-7f10-43ee-bb3d-9ee6b6dd27c9.jpg" 
+                    src="/assets/emergent/ik1xbx5s_b35a2da7-7f10-43ee-bb3d-9ee6b6dd27c9.jpg" 
                     alt="Community Events"
                     className="community-photo"
                   />
@@ -112,7 +112,7 @@ const CommunitySection = () => {
               <div className="community-images community-images-single">
                 <div className="community-image-item">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/q1b05tq2_IMG_6770.jpg" 
+                    src="/assets/emergent/q1b05tq2_IMG_6770.jpg" 
                     alt="College Speaking Session"
                     className="community-photo"
                   />

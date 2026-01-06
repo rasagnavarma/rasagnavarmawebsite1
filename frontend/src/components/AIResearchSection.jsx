@@ -95,21 +95,21 @@ const AIResearchSection = () => {
           <div className="ai-gallery-grid">
             <div className="gallery-item">
               <img 
-                src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/79gvpq62_DSC05867.JPG" 
+                src="/assets/emergent/79gvpq62_DSC05867.JPG" 
                 alt="Rasagna Varma Professional 1"
                 className="gallery-image"
               />
             </div>
             <div className="gallery-item">
               <img 
-                src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec.png" 
+                src="/assets/emergent/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec.png" 
                 alt="Rasagna Varma Professional 2"
                 className="gallery-image"
               />
             </div>
             <div className="gallery-item">
               <img 
-                src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/no812xp5_DSC00728.jpg" 
+                src="/assets/emergent/no812xp5_DSC00728.jpg" 
                 alt="Rasagna Varma Professional 3"
                 className="gallery-image"
               />

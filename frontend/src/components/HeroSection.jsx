@@ -123,7 +123,7 @@ const HeroSection = () => {
         <div className="hero-right">
           <div className="hero-image-container">
             <img 
-              src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/no812xp5_DSC00728.jpg" 
+              src="/assets/emergent/no812xp5_DSC00728.jpg" 
               alt="Rasagna Varma"
               className="hero-profile-image"
             />
