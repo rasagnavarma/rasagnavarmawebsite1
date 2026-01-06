@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import useSmoothScroll from "./hooks/useSmoothScroll";
 import HeroSection from "./components/HeroSection";
 import BioSection from "./components/BioSection";
 import TimelineSection from "./components/TimelineSection";
@@ -10,6 +11,8 @@ import SkillsSection from "./components/SkillsSection";
 import Footer from "./components/Footer";
 
 function App() {
+  useSmoothScroll();
+  
   return (
     <div className="App">
       <HeroSection />
