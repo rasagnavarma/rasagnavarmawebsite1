@@ -1,14 +1,19 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
 from typing import List
-import uuid
-from datetime import datetime, timezone
+from models import (
+    ProfileData, Experience, Mission, Speaking, Certification, 
+    Skills, BioData, CommunityWork, ContactSubmission, ContactSubmissionCreate
+)
+from seed_data import (
+    hero_data, bio_data, experiences, missions, speaking_engagements,
+    certifications, skills_data, community_work
+)
 
 
 ROOT_DIR = Path(__file__).parent
@@ -25,46 +30,164 @@ app = FastAPI()
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
-# Define Models
-class StatusCheck(BaseModel):
-    model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
-    
-    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    client_name: str
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+# Seed database on startup
+@app.on_event("startup")
+async def seed_database():
+    try:
+        # Check if data already exists
+        profile_count = await db.profile.count_documents({})
+        
+        if profile_count == 0:
+            logger.info("Seeding database with initial data...")
+            
+            # Insert profile data
+            await db.profile.insert_one(hero_data)
+            logger.info("✓ Profile data seeded")
+            
+            # Insert bio data
+            await db.bio.insert_one(bio_data)
+            logger.info("✓ Bio data seeded")
+            
+            # Insert experiences
+            await db.experiences.insert_many(experiences)
+            logger.info("✓ Experiences seeded")
+            
+            # Insert missions
+            await db.missions.insert_many(missions)
+            logger.info("✓ Missions seeded")
+            
+            # Insert speaking engagements
+            await db.speaking.insert_many(speaking_engagements)
+            logger.info("✓ Speaking engagements seeded")
+            
+            # Insert certifications
+            await db.certifications.insert_many(certifications)
+            logger.info("✓ Certifications seeded")
+            
+            # Insert skills
+            await db.skills.insert_one(skills_data)
+            logger.info("✓ Skills seeded")
+            
+            # Insert community work
+            await db.community.insert_many(community_work)
+            logger.info("✓ Community work seeded")
+            
+            logger.info("Database seeding completed successfully!")
+        else:
+            logger.info("Database already seeded, skipping...")
+    except Exception as e:
+        logger.error(f"Error seeding database: {str(e)}")
 
-class StatusCheckCreate(BaseModel):
-    client_name: str
+# API Routes
 
-# Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Rasagna Varma Portfolio API", "status": "active"}
 
-@api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
-    status_dict = input.model_dump()
-    status_obj = StatusCheck(**status_dict)
-    
-    # Convert to dict and serialize datetime to ISO string for MongoDB
-    doc = status_obj.model_dump()
-    doc['timestamp'] = doc['timestamp'].isoformat()
-    
-    _ = await db.status_checks.insert_one(doc)
-    return status_obj
+@api_router.get("/profile")
+async def get_profile():
+    """Get hero section profile data"""
+    try:
+        profile = await db.profile.find_one({}, {"_id": 0})
+        if not profile:
+            raise HTTPException(status_code=404, detail="Profile not found")
+        return profile
+    except Exception as e:
+        logger.error(f"Error fetching profile: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
-@api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
-    # Exclude MongoDB's _id field from the query results
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
-    
-    # Convert ISO string timestamps back to datetime objects
-    for check in status_checks:
-        if isinstance(check['timestamp'], str):
-            check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
-    return status_checks
+@api_router.get("/bio")
+async def get_bio():
+    """Get biography data"""
+    try:
+        bio = await db.bio.find_one({}, {"_id": 0})
+        if not bio:
+            raise HTTPException(status_code=404, detail="Bio not found")
+        return bio
+    except Exception as e:
+        logger.error(f"Error fetching bio: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.get("/experiences")
+async def get_experiences():
+    """Get all work experiences"""
+    try:
+        experiences_list = await db.experiences.find({}, {"_id": 0}).sort("order", 1).to_list(100)
+        return experiences_list
+    except Exception as e:
+        logger.error(f"Error fetching experiences: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.get("/missions")
+async def get_missions():
+    """Get all escalation missions"""
+    try:
+        missions_list = await db.missions.find({}, {"_id": 0}).to_list(100)
+        return missions_list
+    except Exception as e:
+        logger.error(f"Error fetching missions: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.get("/speaking")
+async def get_speaking():
+    """Get all speaking engagements"""
+    try:
+        speaking_list = await db.speaking.find({}, {"_id": 0}).to_list(100)
+        return speaking_list
+    except Exception as e:
+        logger.error(f"Error fetching speaking engagements: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.get("/certifications")
+async def get_certifications():
+    """Get all certifications"""
+    try:
+        certs_list = await db.certifications.find({}, {"_id": 0}).to_list(100)
+        return certs_list
+    except Exception as e:
+        logger.error(f"Error fetching certifications: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.get("/skills")
+async def get_skills():
+    """Get skills data"""
+    try:
+        skills = await db.skills.find_one({}, {"_id": 0})
+        if not skills:
+            raise HTTPException(status_code=404, detail="Skills not found")
+        return skills
+    except Exception as e:
+        logger.error(f"Error fetching skills: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.get("/community")
+async def get_community():
+    """Get community work"""
+    try:
+        community_list = await db.community.find({}, {"_id": 0}).to_list(100)
+        return community_list
+    except Exception as e:
+        logger.error(f"Error fetching community work: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.post("/contact")
+async def submit_contact(contact: ContactSubmissionCreate):
+    """Submit contact form"""
+    try:
+        contact_obj = ContactSubmission(**contact.dict())
+        await db.contact_submissions.insert_one(contact_obj.dict())
+        logger.info(f"Contact submission received from {contact.email}")
+        return {"success": True, "message": "Contact submission received successfully"}
+    except Exception as e:
+        logger.error(f"Error submitting contact: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to submit contact form")
 
 # Include the router in the main app
 app.include_router(api_router)
@@ -72,17 +195,10 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
