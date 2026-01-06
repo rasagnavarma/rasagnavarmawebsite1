@@ -3,6 +3,23 @@
   background: var(--bg-primary);
   padding: 100px 7.6923%;
   position: relative;
+  overflow: hidden;
+}
+
+.spline-background-warroom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spline-background-warroom canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .warroom-section::before {
