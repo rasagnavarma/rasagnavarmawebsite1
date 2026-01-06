@@ -24,6 +24,29 @@
   height: 100% !important;
 }
 
+/* Responsive Spline for Timeline */
+@media (max-width: 1200px) {
+  .spline-background-timeline {
+    width: 70%;
+    height: 70%;
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 968px) {
+  .spline-background-timeline {
+    width: 90%;
+    height: 60%;
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 640px) {
+  .spline-background-timeline {
+    display: none;
+  }
+}
+
 .timeline-section::before {
   content: '';
   position: absolute;
