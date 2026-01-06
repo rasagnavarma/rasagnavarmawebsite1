@@ -23,6 +23,30 @@
   height: 100% !important;
 }
 
+/* Responsive Spline for War Room */
+@media (max-width: 1200px) {
+  .spline-background-warroom {
+    width: 50%;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 968px) {
+  .spline-background-warroom {
+    width: 100%;
+    opacity: 0.3;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .spline-background-warroom {
+    display: none;
+  }
+}
+
 .warroom-section::before {
   content: '';
   position: absolute;
