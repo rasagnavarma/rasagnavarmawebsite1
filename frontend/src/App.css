@@ -151,6 +151,24 @@ html {
   border: 1px solid var(--border-subtle);
 }
 
+/* Loading State */
+.loading-text {
+  font-size: 24px;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 100px 0;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 /* Responsive Typography */
 @media (max-width: 768px) {
   .container {
