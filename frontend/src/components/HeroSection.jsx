@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Spline from '@splinetool/react-spline';
 import axios from 'axios';
 import './HeroSection.css';
 
@@ -122,10 +121,13 @@ const HeroSection = () => {
         </div>
         
         <div className="hero-right">
-          <div className="spline-container">
-            <Spline 
-              scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode"
+          <div className="hero-image-container">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/no812xp5_DSC00728.jpg" 
+              alt="Rasagna Varma"
+              className="hero-profile-image"
             />
+            <div className="image-glow"></div>
           </div>
         </div>
       </div>
