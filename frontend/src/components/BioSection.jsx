@@ -75,6 +75,10 @@ const BioSection = () => {
 
   return (
     <section className="bio-section" ref={sectionRef}>
+      <div className="spline-background-bio">
+        <Spline scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode" />
+      </div>
+      
       <div className="bio-container">
         <div className="bio-header">
           <h2 className="bio-title">{bioData.title}</h2>
