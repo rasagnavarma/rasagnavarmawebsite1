@@ -1,9 +1,44 @@
-import React from 'react';
-import { certifications, skills } from '../mock';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Award, Code, Wrench, Target, Users as UsersIcon } from 'lucide-react';
 import './SkillsSection.css';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
+
 const SkillsSection = () => {
+  const [skills, setSkills] = useState(null);
+  const [certifications, setCertifications] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [skillsRes, certsRes] = await Promise.all([
+          axios.get(`${API}/skills`),
+          axios.get(`${API}/certifications`)
+        ]);
+        setSkills(skillsRes.data);
+        setCertifications(certsRes.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching skills data:', error);
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (loading || !skills) {
+    return (
+      <section className="skills-section" id="skills">
+        <div className="skills-container">
+          <div className="loading-text">Loading...</div>
+        </div>
+      </section>
+    );
+  }
+
   const skillCategories = [
     { title: 'Platforms', items: skills.platforms, icon: Code },
     { title: 'Programming', items: skills.programming, icon: Code },
