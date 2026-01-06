@@ -5,14 +5,14 @@
 }
 
 :root {
-  /* Cinematic Dark Theme Colors */
-  --bg-primary: #000000;
-  --bg-secondary: #121212;
+  /* Enhanced Background Colors - Lighter & More Interesting */
+  --bg-primary: #0a0e27;           /* Deep blue-black instead of pure black */
+  --bg-secondary: #121828;         /* Lighter secondary */
   --bg-overlay: rgba(255, 255, 255, 0.1);
   
   --text-primary: #FFFFFF;
   --text-secondary: rgba(255, 255, 255, 0.85);
-  --text-muted: #4D4D4D;
+  --text-muted: #6B7280;           /* Lighter muted text */
   
   --border-subtle: rgba(255, 255, 255, 0.25);
   --border-medium: rgba(255, 255, 255, 0.4);
@@ -24,6 +24,7 @@
   
   --accent-gold: #FFD700;
   --accent-purple: #9D4EDD;
+  --accent-blue: #3B82F6;
 }
 
 @font-face {
