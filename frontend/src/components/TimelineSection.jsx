@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Spline from '@splinetool/react-spline';
 import axios from 'axios';
 import { ChevronRight, Building2, Calendar, TrendingUp } from 'lucide-react';
 import './TimelineSection.css';
