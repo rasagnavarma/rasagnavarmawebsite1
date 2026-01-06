@@ -48,3 +48,20 @@ Notes
 If you want, I can proceed to create the Render service and set the required env vars — tell me whether you will:
 - Provide Render & DNS access (credentials), or
 - Prefer I prepare everything and send instructions for you to finalize in Render & DNS.
+
+Automated deploy (recommended)
+--------------------------------
+I added a GitHub Actions workflow that will trigger a Render deploy for your backend when you push to `main` or run the workflow manually. To use it:
+
+1. Create a Render service (see steps above) or grab your existing Render Service ID.
+2. Add two repository secrets in GitHub (Settings → Secrets → Actions):
+   - `RENDER_API_KEY` — a Render API key (create in Render Dashboard → Account → API Keys)
+   - `RENDER_SERVICE_ID` — the Render service ID (available on the service settings page)
+3. Once secrets are configured, go to the Actions tab and run the "Deploy backend to Render" workflow or push to `main`.
+
+The workflow will:
+- Trigger a deploy via Render API,
+- Poll until the deploy finishes (success/failure), and
+- Print the deployed domain (so you can add DNS/CNAME if you want a custom `api.rasagnavarma.com`).
+
+I can finish creating the Render service and set DNS if you provide access, or you can run the workflow yourself — which option do you prefer?
