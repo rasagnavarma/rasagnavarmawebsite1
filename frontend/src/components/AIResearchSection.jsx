@@ -90,35 +90,37 @@ const AIResearchSection = () => {
         </div>
 
         <div className="ai-research-gallery">
-          <h3 className="gallery-title">Research & Innovation Gallery</h3>
-          <p className="gallery-subtitle">Visual documentation of AI research projects and innovations</p>
+          <h3 className="gallery-title">Professional Showcase</h3>
+          <p className="gallery-subtitle">Leadership moments and professional engagements</p>
           <div className="ai-gallery-grid">
             <div className="gallery-item">
-              <div className="gallery-placeholder">
-                <Brain size={40} />
-                <p>AI Research Project 1</p>
-              </div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/79gvpq62_DSC05867.JPG" 
+                alt="Rasagna Varma Professional 1"
+                className="gallery-image"
+              />
             </div>
             <div className="gallery-item">
-              <div className="gallery-placeholder">
-                <Zap size={40} />
-                <p>Innovation Showcase 1</p>
-              </div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec.png" 
+                alt="Rasagna Varma Professional 2"
+                className="gallery-image"
+              />
             </div>
             <div className="gallery-item">
-              <div className="gallery-placeholder">
-                <Database size={40} />
-                <p>Data Science Project</p>
-              </div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/no812xp5_DSC00728.jpg" 
+                alt="Rasagna Varma Professional 3"
+                className="gallery-image"
+              />
             </div>
             <div className="gallery-item">
               <div className="gallery-placeholder">
                 <Sparkles size={40} />
-                <p>AI Innovation 2</p>
+                <p>Add more images</p>
               </div>
             </div>
           </div>
-          <p className="gallery-note">* Image placeholders - Add your AI research visuals here</p>
         </div>
       </div>
     </section>
