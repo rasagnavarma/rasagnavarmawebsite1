@@ -80,20 +80,29 @@ const CommunitySection = () => {
             <div className="community-image-section">
               <h4 className="image-section-title">Speaking Engagements</h4>
               <div className="community-images">
-                <div className="community-image-placeholder">
-                  <Mic size={40} />
-                  <p>UN India Hosting</p>
-                  <span className="upload-note">Add speaking photo 1</span>
+                <div className="community-image-item">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/1j1j2my3_4A8B1648.JPG" 
+                    alt="UN India Hosting"
+                    className="community-photo"
+                  />
+                  <div className="image-caption">UN India Hosting</div>
                 </div>
-                <div className="community-image-placeholder">
-                  <Users size={40} />
-                  <p>Karma Summit Award</p>
-                  <span className="upload-note">Add speaking photo 2</span>
+                <div className="community-image-item">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/ae1ye95d_IMG_6770.heic" 
+                    alt="Speaking at College"
+                    className="community-photo"
+                  />
+                  <div className="image-caption">College Speaking Session</div>
                 </div>
-                <div className="community-image-placeholder">
-                  <MapPin size={40} />
-                  <p>PMI Pearl City Chapter</p>
-                  <span className="upload-note">Add speaking photo 3</span>
+                <div className="community-image-item">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/jk9jnifc_IMG_1911.heif" 
+                    alt="PMI Pearl City Chapter"
+                    className="community-photo"
+                  />
+                  <div className="image-caption">Leaders of India</div>
                 </div>
               </div>
             </div>
@@ -101,20 +110,29 @@ const CommunitySection = () => {
             <div className="community-image-section">
               <h4 className="image-section-title">Community Volunteering</h4>
               <div className="community-images">
-                <div className="community-image-placeholder">
-                  <Users size={40} />
-                  <p>Employee Impact India</p>
-                  <span className="upload-note">Add volunteering photo 1</span>
+                <div className="community-image-item">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/ik1xbx5s_b35a2da7-7f10-43ee-bb3d-9ee6b6dd27c9.jpg" 
+                    alt="Employee Impact India"
+                    className="community-photo"
+                  />
+                  <div className="image-caption">Employee Impact Events</div>
                 </div>
-                <div className="community-image-placeholder">
-                  <Mic size={40} />
-                  <p>VTO Programs</p>
-                  <span className="upload-note">Add volunteering photo 2</span>
+                <div className="community-image-item">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/d4evbc23_IMG_6770.heic" 
+                    alt="VTO Programs"
+                    className="community-photo"
+                  />
+                  <div className="image-caption">VTO Programs</div>
                 </div>
-                <div className="community-image-placeholder">
-                  <MapPin size={40} />
-                  <p>Community Outreach</p>
-                  <span className="upload-note">Add volunteering photo 3</span>
+                <div className="community-image-item">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec.png" 
+                    alt="Community Outreach"
+                    className="community-photo"
+                  />
+                  <div className="image-caption">Community Outreach</div>
                 </div>
               </div>
             </div>
