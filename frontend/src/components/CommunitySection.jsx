@@ -73,8 +73,53 @@ const CommunitySection = () => {
         <div className="community-work">
           <h3 className="community-work-title">
             <Mic size={24} />
-            Community Leadership
+            Community Leadership & Impact
           </h3>
+          
+          <div className="community-images-grid">
+            <div className="community-image-section">
+              <h4 className="image-section-title">Speaking Engagements</h4>
+              <div className="community-images">
+                <div className="community-image-placeholder">
+                  <Mic size={40} />
+                  <p>UN India Hosting</p>
+                  <span className="upload-note">Add speaking photo 1</span>
+                </div>
+                <div className="community-image-placeholder">
+                  <Users size={40} />
+                  <p>Karma Summit Award</p>
+                  <span className="upload-note">Add speaking photo 2</span>
+                </div>
+                <div className="community-image-placeholder">
+                  <MapPin size={40} />
+                  <p>PMI Pearl City Chapter</p>
+                  <span className="upload-note">Add speaking photo 3</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="community-image-section">
+              <h4 className="image-section-title">Community Volunteering</h4>
+              <div className="community-images">
+                <div className="community-image-placeholder">
+                  <Users size={40} />
+                  <p>Employee Impact India</p>
+                  <span className="upload-note">Add volunteering photo 1</span>
+                </div>
+                <div className="community-image-placeholder">
+                  <Mic size={40} />
+                  <p>VTO Programs</p>
+                  <span className="upload-note">Add volunteering photo 2</span>
+                </div>
+                <div className="community-image-placeholder">
+                  <MapPin size={40} />
+                  <p>Community Outreach</p>
+                  <span className="upload-note">Add volunteering photo 3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <div className="community-work-grid">
             {communityWork.map((work, index) => (
               <div key={index} className="community-work-card">
