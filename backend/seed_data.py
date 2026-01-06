@@ -241,11 +241,11 @@ certifications = [
 ]
 
 skills_data = {
+    "leadership": ["Strategic Leadership", "Crisis Management", "Team Building & Empowerment", "Stakeholder Management", "Executive Communication", "Change Management", "Mentorship & Coaching"],
     "platforms": ["Service Cloud", "B2B Commerce Cloud", "Marketing Cloud", "Sales Cloud", "Experience Cloud"],
-    "programming": ["Apex", "Visualforce", "Lightning Web Components", "SOQL", "SOSL"],
-    "tools": ["Data Loader", "Workbench", "Salesforce Reports", "Dashboards", "Excel", "Tableau", "JIRA", "Confluence"],
-    "methodologies": ["Agile", "Scrum", "Incident Management", "Escalation Management", "Process Improvement"],
-    "leadership": ["Team Management", "Crisis Leadership", "Cross-functional Collaboration", "Stakeholder Management", "Strategic Planning"]
+    "tools": ["Data Loader", "Workbench", "Salesforce Reports", "Dashboards", "Excel", "Tableau", "JIRA", "Confluence", "AI/ML Tools"],
+    "methodologies": ["Agile", "Scrum", "Incident Management", "Escalation Management", "Process Improvement", "AI Research"],
+    "programming": ["Apex", "Visualforce", "Lightning Web Components", "SOQL", "SOSL", "Python (AI/ML)"]
 }
 
 community_work = [
