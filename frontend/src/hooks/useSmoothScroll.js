@@ -2,27 +2,23 @@ import { useEffect } from 'react';
 
 const useSmoothScroll = () => {
   useEffect(() => {
-    // Add smooth scroll class
     document.documentElement.classList.add('smooth-scroll');
 
     // Parallax effect on scroll
     const handleScroll = () => {
       const scrolled = window.pageYOffset;
       
-      // Parallax for sections
       const sections = document.querySelectorAll('section');
       sections.forEach((section, index) => {
         const speed = 0.5 + (index * 0.1);
         const yPos = -(scrolled * speed);
         
-        // Only apply to background elements
-        const bg = section.querySelector('.hero-grid-pattern, .spline-background-warroom');
+        const bg = section.querySelector('.hero-grid-pattern, .spline-background-warroom, .spline-background-bio');
         if (bg) {
           bg.style.transform = `translateY(${yPos * 0.05}px)`;
         }
       });
 
-      // Fade in elements on scroll
       const elements = document.querySelectorAll('.animate-on-scroll');
       elements.forEach((el) => {
         const elementTop = el.getBoundingClientRect().top;
@@ -34,7 +30,7 @@ const useSmoothScroll = () => {
       });
     };
 
-    // Custom cursor effect
+    // Enhanced cursor with ripple effect
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
     document.body.appendChild(cursor);
@@ -51,8 +47,20 @@ const useSmoothScroll = () => {
       cursorDot.style.top = e.clientY + 'px';
     };
 
-    // Add hover effects for interactive elements
-    const interactiveElements = document.querySelectorAll('button, a, .metric-card, .timeline-card, .mission-card');
+    // Click ripple effect
+    const createRipple = (e) => {
+      const ripple = document.createElement('div');
+      ripple.className = 'click-ripple';
+      ripple.style.left = e.clientX + 'px';
+      ripple.style.top = e.clientY + 'px';
+      document.body.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    };
+
+    const interactiveElements = document.querySelectorAll('button, a, .metric-card, .timeline-card, .mission-card, .community-photo');
     
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
@@ -65,13 +73,14 @@ const useSmoothScroll = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('mousemove', moveCursor, { passive: true });
+    window.addEventListener('click', createRipple, { passive: true });
 
-    // Initial call
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', moveCursor);
+      window.removeEventListener('click', createRipple);
       document.body.removeChild(cursor);
       document.body.removeChild(cursorDot);
     };
