@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Spline from '@splinetool/react-spline';
 import axios from 'axios';
 import { Target, Users, TrendingUp, Shield, Award, Brain, Globe } from 'lucide-react';
 import './BioSection.css';
