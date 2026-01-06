@@ -1,10 +1,29 @@
-import React, { useState } from 'react';
-import { escalationMissions } from '../mock';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { AlertCircle, CheckCircle, Clock, Users, TrendingUp } from 'lucide-react';
 import './WarRoomSection.css';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
+
 const WarRoomSection = () => {
   const [selectedMission, setSelectedMission] = useState(null);
+  const [escalationMissions, setEscalationMissions] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchMissions = async () => {
+      try {
+        const response = await axios.get(`${API}/missions`);
+        setEscalationMissions(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching missions:', error);
+        setLoading(false);
+      }
+    };
+    fetchMissions();
+  }, []);
 
   const getStatusIcon = (status) => {
     return status === 'Resolved' ? <CheckCircle size={20} /> : <AlertCircle size={20} />;
