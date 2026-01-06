@@ -23,6 +23,29 @@
   height: 100% !important;
 }
 
+/* Responsive Spline for Bio */
+@media (max-width: 1200px) {
+  .spline-background-bio {
+    width: 50%;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 968px) {
+  .spline-background-bio {
+    width: 100%;
+    opacity: 0.3;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .spline-background-bio {
+    display: none;
+  }
+}
+
 .bio-section::before {
   content: '';
   position: absolute;
