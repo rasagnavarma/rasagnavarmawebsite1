@@ -6,6 +6,24 @@
   overflow: hidden;
 }
 
+.spline-background-timeline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+  filter: brightness(1.1);
+}
+
+.spline-background-timeline canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .timeline-section::before {
   content: '';
   position: absolute;
