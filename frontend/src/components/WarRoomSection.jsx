@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Spline from '@splinetool/react-spline';
 import axios from 'axios';
 import { AlertCircle, CheckCircle, Clock, Users, TrendingUp } from 'lucide-react';
 import './WarRoomSection.css';
