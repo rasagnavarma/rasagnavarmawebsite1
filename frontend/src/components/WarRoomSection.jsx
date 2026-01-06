@@ -37,6 +37,16 @@ const WarRoomSection = () => {
     }
   };
 
+  if (loading || escalationMissions.length === 0) {
+    return (
+      <section className="warroom-section" id="warroom">
+        <div className="warroom-container">
+          <div className="loading-text">Loading missions...</div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="warroom-section" id="warroom">
       <div className="warroom-container">
