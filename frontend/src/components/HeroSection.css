@@ -316,8 +316,13 @@
     font-size: 36px;
   }
   
-  .spline-container {
+  .hero-image-container {
     width: 320px;
     height: 320px;
+  }
+  
+  .image-glow {
+    width: 340px;
+    height: 340px;
   }
 }
