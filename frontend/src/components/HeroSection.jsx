@@ -52,6 +52,23 @@ const HeroSection = () => {
     }
   }, [heroData, hasAnimated]);
 
+  if (loading) {
+    return (
+      <section className="hero-section">
+        <div className="hero-grid-pattern"></div>
+        <div className="hero-content">
+          <div className="hero-left">
+            <div className="loading-text">Loading...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!heroData) {
+    return null;
+  }
+
   return (
     <section className="hero-section">
       <div className="hero-grid-pattern"></div>
