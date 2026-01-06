@@ -50,11 +50,15 @@ const WarRoomSection = () => {
 
   return (
     <section className="warroom-section" id="warroom">
+      <div className="spline-background-warroom">
+        <Spline scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode" />
+      </div>
+      
       <div className="warroom-container">
         <div className="warroom-header">
-          <div className="warroom-badge">MISSION CONTROL</div>
-          <h2 className="warroom-title">Escalation War Room</h2>
-          <p className="warroom-subtitle">Critical incidents, strategic resolutions, measurable impact</p>
+          <div className="warroom-badge">MISSION CONTROL CENTER</div>
+          <h2 className="warroom-title">Critical Impact Missions</h2>
+          <p className="warroom-subtitle">Strategic resolutions that drive measurable business impact</p>
         </div>
         
         <div className="warroom-grid">
