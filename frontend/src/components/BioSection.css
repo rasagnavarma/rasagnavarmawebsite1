@@ -10,11 +10,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 40%;
+  width: 60%;
   height: 100%;
-  opacity: 0.25;
+  opacity: 0.5;
   pointer-events: none;
   z-index: 0;
+  filter: brightness(1.2);
 }
 
 .spline-background-bio canvas {
