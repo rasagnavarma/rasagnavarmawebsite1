@@ -90,49 +90,49 @@ const CommunitySection = () => {
                 </div>
                 <div className="community-image-item">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/ae1ye95d_IMG_6770.heic" 
-                    alt="Speaking at College"
-                    className="community-photo"
-                  />
-                  <div className="image-caption">College Speaking Session</div>
-                </div>
-                <div className="community-image-item">
-                  <img 
                     src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/jk9jnifc_IMG_1911.heif" 
-                    alt="PMI Pearl City Chapter"
+                    alt="Leaders of India"
                     className="community-photo"
                   />
                   <div className="image-caption">Leaders of India</div>
+                </div>
+                <div className="community-image-item">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/ik1xbx5s_b35a2da7-7f10-43ee-bb3d-9ee6b6dd27c9.jpg" 
+                    alt="Community Events"
+                    className="community-photo"
+                  />
+                  <div className="image-caption">Community Events</div>
                 </div>
               </div>
             </div>
             
             <div className="community-image-section">
-              <h4 className="image-section-title">Community Volunteering</h4>
+              <h4 className="image-section-title">Community Volunteering & Outreach</h4>
               <div className="community-images">
                 <div className="community-image-item">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/ik1xbx5s_b35a2da7-7f10-43ee-bb3d-9ee6b6dd27c9.jpg" 
-                    alt="Employee Impact India"
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/ae1ye95d_IMG_6770.heic" 
+                    alt="College Speaking Session"
                     className="community-photo"
                   />
-                  <div className="image-caption">Employee Impact Events</div>
-                </div>
-                <div className="community-image-item">
-                  <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/d4evbc23_IMG_6770.heic" 
-                    alt="VTO Programs"
-                    className="community-photo"
-                  />
-                  <div className="image-caption">VTO Programs</div>
+                  <div className="image-caption">College Engagement</div>
                 </div>
                 <div className="community-image-item">
                   <img 
                     src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec.png" 
-                    alt="Community Outreach"
+                    alt="Salesforce Leadership"
                     className="community-photo"
                   />
-                  <div className="image-caption">Community Outreach</div>
+                  <div className="image-caption">Salesforce Leadership</div>
+                </div>
+                <div className="community-image-item">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/79gvpq62_DSC05867.JPG" 
+                    alt="Professional Engagement"
+                    className="community-photo"
+                  />
+                  <div className="image-caption">Professional Engagement</div>
                 </div>
               </div>
             </div>
