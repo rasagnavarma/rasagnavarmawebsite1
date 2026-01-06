@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import { Target, Users, TrendingUp, Shield } from 'lucide-react';
+import { Target, Users, TrendingUp, Shield, Award, Brain, Globe } from 'lucide-react';
 import './BioSection.css';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
