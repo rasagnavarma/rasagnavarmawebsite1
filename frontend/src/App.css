@@ -180,64 +180,6 @@ html.smooth-scroll {
   }
 }
 
-/* Custom Cursor */
-.custom-cursor {
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--brand-primary);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
-}
-
-.custom-cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--brand-primary);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 10000;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
-}
-
-.custom-cursor.cursor-hover {
-  transform: translate(-50%, -50%) scale(1.8);
-  border-color: var(--accent-purple);
-  background: rgba(157, 78, 221, 0.2);
-}
-
-/* Click Ripple Effect */
-.click-ripple {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid var(--brand-primary);
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  animation: ripple 0.6s ease-out;
-}
-
-@keyframes ripple {
-  0% {
-    width: 20px;
-    height: 20px;
-    opacity: 1;
-  }
-  100% {
-    width: 100px;
-    height: 100px;
-    opacity: 0;
-  }
-}
-
 /* Animate on Scroll */
 .animate-on-scroll {
   opacity: 0;
