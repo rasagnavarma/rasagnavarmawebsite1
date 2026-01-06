@@ -94,25 +94,40 @@ const AIResearchSection = () => {
           <p className="gallery-subtitle">Leadership moments and professional engagements</p>
           <div className="ai-gallery-grid">
             <div className="gallery-item">
-              <img 
-                src="/assets/emergent/79gvpq62_DSC05867.JPG" 
-                alt="Rasagna Varma Professional 1"
-                className="gallery-image"
-              />
+              <picture>
+                <img
+                  src="/assets/emergent/79gvpq62_DSC05867-800.JPG"
+                  srcSet="/assets/emergent/79gvpq62_DSC05867-400.JPG 400w, /assets/emergent/79gvpq62_DSC05867-800.JPG 800w, /assets/emergent/79gvpq62_DSC05867-1200.JPG 1200w"
+                  sizes="(max-width: 600px) 400px, 800px"
+                  alt="Rasagna Varma Professional 1"
+                  className="gallery-image"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="gallery-item">
-              <img 
-                src="/assets/emergent/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec.png" 
-                alt="Rasagna Varma Professional 2"
-                className="gallery-image"
-              />
+              <picture>
+                <img
+                  src="/assets/emergent/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec-800.png"
+                  srcSet="/assets/emergent/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec-400.png 400w, /assets/emergent/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec-800.png 800w, /assets/emergent/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec-1200.png 1200w"
+                  sizes="(max-width: 600px) 400px, 800px"
+                  alt="Rasagna Varma Professional 2"
+                  className="gallery-image"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="gallery-item">
-              <img 
-                src="/assets/emergent/no812xp5_DSC00728.jpg" 
-                alt="Rasagna Varma Professional 3"
-                className="gallery-image"
-              />
+              <picture>
+                <img
+                  src="/assets/emergent/no812xp5_DSC00728-800.jpg"
+                  srcSet="/assets/emergent/no812xp5_DSC00728-400.jpg 400w, /assets/emergent/no812xp5_DSC00728-800.jpg 800w, /assets/emergent/no812xp5_DSC00728-1200.jpg 1200w"
+                  sizes="(max-width: 600px) 400px, 800px"
+                  alt="Rasagna Varma Professional 3"
+                  className="gallery-image"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="gallery-item">
               <div className="gallery-placeholder">

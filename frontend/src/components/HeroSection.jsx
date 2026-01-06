@@ -122,11 +122,16 @@ const HeroSection = () => {
         
         <div className="hero-right">
           <div className="hero-image-container">
-            <img 
-              src="/assets/emergent/no812xp5_DSC00728.jpg" 
-              alt="Rasagna Varma"
-              className="hero-profile-image"
-            />
+            <picture>
+              <img
+                src="/assets/emergent/no812xp5_DSC00728-800.jpg"
+                srcSet="/assets/emergent/no812xp5_DSC00728-400.jpg 400w, /assets/emergent/no812xp5_DSC00728-800.jpg 800w, /assets/emergent/no812xp5_DSC00728-1200.jpg 1200w"
+                sizes="(max-width: 600px) 400px, 800px"
+                alt="Rasagna Varma"
+                className="hero-profile-image"
+                loading="lazy"
+              />
+            </picture>
             <div className="image-glow"></div>
           </div>
         </div>
