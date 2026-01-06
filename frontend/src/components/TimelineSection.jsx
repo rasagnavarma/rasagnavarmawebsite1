@@ -55,7 +55,7 @@ const TimelineSection = () => {
       
       <div className="timeline-container">
         <div className="timeline-header">
-          <h2 className="timeline-title">Impact Timeline</h2>
+          <h2 className="timeline-title">Experiences</h2>
           <p className="timeline-subtitle">A journey through roles, teams, and transformations</p>
         </div>
         
