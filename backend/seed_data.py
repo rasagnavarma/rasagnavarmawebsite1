@@ -2,30 +2,33 @@
 
 hero_data = {
     "name": "Buddharaju Rasagna Varma",
-    "role": "Operations Senior | Critical Incident Centre Management",
+    "role": "Escalation Manager | Operations Senior",
     "tagline": "Red Accounts & Employee Impact India Lead at Salesforce",
     "metrics": [
         {"label": "Years Experience", "value": 7, "suffix": "+"},
-        {"label": "Speaking Sessions", "value": 15, "suffix": "+"},
+        {"label": "Speaking Sessions", "value": 10, "suffix": "+"},
         {"label": "Team Members Led", "value": 40, "suffix": "+"},
-        {"label": "Uptime Maintained", "value": 99, "suffix": "%"}
+        {"label": "Uptime Maintained", "value": 98, "suffix": "%"}
     ]
 }
 
 bio_data = {
-    "title": "Who is Rasagna?",
+    "title": "Who is Rasagna Varma?",
     "narrative": [
-        "A results-oriented leader who transforms chaos into clarity.",
-        "With 7+ years at Salesforce, I've mastered the art of managing critical incidents while keeping customers at the heart of every decision.",
-        "My leadership philosophy? Empower teams, embrace data, and never stop learning.",
-        "From managing red account escalations to leading Employee Impact initiatives across India, I thrive in high-pressure environments where strategic thinking meets empathy.",
-        "I believe in building cultures of inclusion, driving technical excellence, and creating systems that scale."
+        "A visionary leader who transforms chaos into clarity and drives innovation at scale.",
+        "With 7+ years at Salesforce, Rasagna has mastered the art of managing critical incidents while keeping customers at the heart of every decision.",
+        "His leadership philosophy centers on empowering teams, embracing data-driven insights, and fostering continuous learning cultures.",
+        "From managing red account escalations to leading Employee Impact initiatives across India, he thrives in high-pressure environments where strategic thinking meets empathy.",
+        "As an AI researcher and innovator, Rasagna explores cutting-edge technologies to solve complex business challenges and create systems that scale.",
+        "He believes in building cultures of inclusion, driving technical excellence, and creating meaningful impact through technology."
     ],
     "values": [
-        {"icon": "Target", "label": "Customer-Centric", "description": "60% increase in team CSAT scores"},
-        {"icon": "Users", "label": "Team Empowerment", "description": "Leading 40+ professionals across India"},
-        {"icon": "TrendingUp", "label": "Continuous Growth", "description": "8 Salesforce certifications + PMP + Scrum Master"},
-        {"icon": "Shield", "label": "Crisis Management", "description": "99% uptime on Commerce Cloud platform"}
+        {"icon": "Users", "label": "Team Empowerment", "description": "Leading 40+ professionals across India with 60% CSAT increase"},
+        {"icon": "Award", "label": "8 Certifications", "description": "PMP + Scrum Master + 6 Salesforce certifications including AI"},
+        {"icon": "Shield", "label": "Crisis Management", "description": "98% uptime maintained across Salesforce platform"},
+        {"icon": "Target", "label": "Customer-Centric", "description": "Transformed team performance with strategic escalation management"},
+        {"icon": "Brain", "label": "AI Innovation", "description": "Researching AI applications for operational excellence"},
+        {"icon": "Globe", "label": "Global Impact", "description": "UN India collaborator and international speaker"}
     ]
 }
 
