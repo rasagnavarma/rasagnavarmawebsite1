@@ -1,6 +1,5 @@
 import React from 'react';
-import { contactData } from '../mock';
-import { Mail, Phone, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, Linkedin } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -11,28 +10,24 @@ const Footer = () => {
           <div className="footer-left">
             <h2 className="footer-title">Let's Connect</h2>
             <p className="footer-description">
-              Open to opportunities in leadership, escalation management, and strategic initiatives.
+              Open to opportunities in leadership, escalation management, AI research, and strategic initiatives.
               Let's build something impactful together.
             </p>
           </div>
           
           <div className="footer-right">
             <div className="contact-links">
-              <a href={`mailto:${contactData.email}`} className="contact-link">
+              <a href="mailto:rasagnavarma@gmail.com" className="contact-link">
                 <Mail size={20} />
-                <span>{contactData.email}</span>
+                <span>rasagnavarma@gmail.com</span>
               </a>
-              <a href={`mailto:${contactData.workEmail}`} className="contact-link">
-                <Mail size={20} />
-                <span>{contactData.workEmail}</span>
-              </a>
-              <a href={`tel:${contactData.phone}`} className="contact-link">
+              <a href="tel:+918985689997" className="contact-link">
                 <Phone size={20} />
-                <span>{contactData.phone}</span>
+                <span>+91 8985689997</span>
               </a>
-              <a href={contactData.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
+              <a href="https://www.linkedin.com/in/rasagnavarmasai/" target="_blank" rel="noopener noreferrer" className="contact-link">
                 <Linkedin size={20} />
-                <span>LinkedIn Profile</span>
+                <span>LinkedIn: rasagnavarmasai</span>
               </a>
             </div>
           </div>
