@@ -1,11 +1,30 @@
-import React, { useRef, useState } from 'react';
-import { timelineData } from '../mock';
+import React, { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
 import { ChevronRight, Building2, Calendar, TrendingUp } from 'lucide-react';
 import './TimelineSection.css';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const TimelineSection = () => {
   const scrollRef = useRef(null);
   const [expandedCard, setExpandedCard] = useState(null);
+  const [timelineData, setTimelineData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchExperiences = async () => {
+      try {
+        const response = await axios.get(`${API}/experiences`);
+        setTimelineData(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching experiences:', error);
+        setLoading(false);
+      }
+    };
+    fetchExperiences();
+  }, []);
 
   const handleScroll = (direction) => {
     if (scrollRef.current) {
