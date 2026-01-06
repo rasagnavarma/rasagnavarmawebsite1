@@ -4,8 +4,8 @@ import axios from 'axios';
 import { Target, Users, TrendingUp, Shield, Award, Brain, Globe } from 'lucide-react';
 import './BioSection.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
+const API = BACKEND_URL.endsWith('/api') ? BACKEND_URL : `${BACKEND_URL}/api`; // supports '', '/api', or full origin
 
 const BioSection = () => {
   const [bioData, setBioData] = useState(null);

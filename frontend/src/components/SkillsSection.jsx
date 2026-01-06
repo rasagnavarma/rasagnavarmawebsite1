@@ -3,8 +3,8 @@ import axios from 'axios';
 import { Award, Code, Wrench, Target, Users as UsersIcon } from 'lucide-react';
 import './SkillsSection.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
+const API = BACKEND_URL.endsWith('/api') ? BACKEND_URL : `${BACKEND_URL}/api`; // supports '', '/api', or full origin
 
 const SkillsSection = () => {
   const [skills, setSkills] = useState(null);
