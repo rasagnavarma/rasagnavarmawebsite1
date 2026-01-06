@@ -109,7 +109,7 @@ const CommunitySection = () => {
             
             <div className="community-image-section">
               <h4 className="image-section-title">Community Volunteering & Outreach</h4>
-              <div className="community-images">
+              <div className="community-images community-images-single">
                 <div className="community-image-item">
                   <img 
                     src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/q1b05tq2_IMG_6770.jpg" 
@@ -118,23 +118,8 @@ const CommunitySection = () => {
                   />
                   <div className="image-caption">College Speaking Session</div>
                 </div>
-                <div className="community-image-item">
-                  <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/6o75miw4_de4c8da6-0a34-406a-98d1-440f48ae7aec.png" 
-                    alt="Salesforce Leadership"
-                    className="community-photo"
-                  />
-                  <div className="image-caption">Salesforce Leadership</div>
-                </div>
-                <div className="community-image-item">
-                  <img 
-                    src="https://customer-assets.emergentagent.com/job_command-center-59/artifacts/79gvpq62_DSC05867.JPG" 
-                    alt="Professional Engagement"
-                    className="community-photo"
-                  />
-                  <div className="image-caption">Professional Engagement</div>
-                </div>
               </div>
+              <p className="add-more-note">More photos coming soon...</p>
             </div>
           </div>
           
