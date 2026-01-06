@@ -220,13 +220,13 @@ missions = [
 ]
 
 speaking_engagements = [
-    {"id": 1, "event": "United Nations India", "topic": "Technology for Social Impact", "year": "2024", "audience": "500+", "type": "Keynote", "description": "Represented Salesforce in collaboration with UN India on technology-driven social initiatives"},
-    {"id": 2, "event": "Karma Asia Bangalore 2025", "topic": "Leadership in Technology", "year": "2025", "audience": "300+", "type": "Panel", "description": "Discussed modern leadership approaches in fast-paced technology environments"},
-    {"id": 3, "event": "Project Management Institute, Hyderabad", "topic": "AI in Project Management", "year": "2024", "audience": "200+", "type": "Workshop", "description": "Led sessions on leveraging AI for project management excellence"},
-    {"id": 4, "event": "Project Management Institute, Hyderabad", "topic": "Agile Methodologies", "year": "2024", "audience": "200+", "type": "Workshop", "description": "Delivered practical Agile implementation strategies for teams"},
-    {"id": 5, "event": "Sri Indhu College", "topic": "AI and Career Development", "year": "2024", "audience": "150+", "type": "Guest Lecture", "description": "Inspired students on AI technologies and Salesforce career opportunities"},
-    {"id": 6, "event": "KPRIT University", "topic": "AI for Social Impact", "year": "2024", "audience": "250+", "type": "Keynote", "description": "Explored how AI can drive meaningful social change"},
-    {"id": 7, "event": "MVGR College of Engineering", "topic": "Salesforce Ecosystem", "year": "2023", "audience": "180+", "type": "Tech Talk", "description": "Introduced students to Salesforce platform and career pathways"}
+    {"id": 1, "event": "United Nations India", "topic": "Technology for Social Impact", "year": "2024", "audience": "500+", "type": "Host", "description": "Hosted Salesforce collaboration with UN India on technology-driven social initiatives and global impact"},
+    {"id": 2, "event": "Karma Asia Summit 2025", "topic": "Leadership Excellence Award", "year": "2025", "audience": "300+", "type": "Award", "description": "Awarded for exceptional leadership and measurable impact in technology and community building"},
+    {"id": 3, "event": "Salesforce Internal Sessions", "topic": "Agile & Knowledge Sharing", "year": "2024", "audience": "200+", "type": "Session Host", "description": "Regular host for Agile methodology sessions, knowledge sharing forums, and career enabler programs"},
+    {"id": 4, "event": "Sri Indhu College", "topic": "AI and Career Development", "year": "2024", "audience": "150+", "type": "Guest Lecture", "description": "Inspired students on AI technologies and Salesforce career opportunities"},
+    {"id": 5, "event": "KPRIT University", "topic": "AI for Social Impact", "year": "2024", "audience": "250+", "type": "Keynote", "description": "Explored how AI can drive meaningful social change"},
+    {"id": 6, "event": "AVN College", "topic": "AI & Salesforce Ecosystem", "year": "2024", "audience": "180+", "type": "Tech Talk", "description": "Introduced students to AI applications and Salesforce platform career pathways"},
+    {"id": 7, "event": "Multiple Engineering Colleges", "topic": "AI Innovation & Salesforce", "year": "2023-2024", "audience": "500+", "type": "Workshop Series", "description": "Conducted workshops on AI innovation and Salesforce ecosystem across various institutions"}
 ]
 
 certifications = [
