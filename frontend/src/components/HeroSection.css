@@ -288,9 +288,14 @@
     justify-content: center;
   }
   
-  .spline-container {
+  .hero-image-container {
     width: 400px;
     height: 400px;
+  }
+  
+  .image-glow {
+    width: 420px;
+    height: 420px;
   }
 }
 
