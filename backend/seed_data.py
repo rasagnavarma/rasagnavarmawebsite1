@@ -2,7 +2,7 @@
 
 hero_data = {
     "name": "Buddharaju Rasagna Varma",
-    "role": "Escalation Manager | Operations Senior",
+    "role": "Escalation Manager | Operations Senior | Critical Incidents Center",
     "tagline": "Red Accounts & Employee Impact India Lead at Salesforce",
     "metrics": [
         {"label": "Years Experience", "value": 7, "suffix": "+"},
