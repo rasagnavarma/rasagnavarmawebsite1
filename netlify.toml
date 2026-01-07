@@ -1,6 +1,6 @@
 [build]
   publish = "frontend/build"
-  command = "cd frontend && npm run build"
+  command = "cd frontend && yarn install && yarn build"
 
 # Force cache clearing for JavaScript files
 [[headers]]
