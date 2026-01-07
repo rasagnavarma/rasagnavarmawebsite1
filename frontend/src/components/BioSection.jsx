@@ -8,11 +8,17 @@ const BioSection = () => {
   const [visibleParagraphs, setVisibleParagraphs] = useState([]);
   const sectionRef = useRef(null);
 
+  // Safety check: ensure bioData exists
+  if (!bioData || !bioData.narrative || !bioData.values) {
+    console.error('BioData is missing or incomplete');
+    return null;
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && bioData && bioData.narrative) {
             bioData.narrative.forEach((_, index) => {
               setTimeout(() => {
                 setVisibleParagraphs(prev => [...prev, index]);
@@ -45,7 +51,15 @@ const BioSection = () => {
   return (
     <section className="bio-section" ref={sectionRef}>
       <div className="spline-background-bio">
-        <Spline scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode" />
+        <Spline 
+          scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode"
+          onError={(error) => {
+            console.warn('Spline loading error:', error);
+          }}
+          onLoad={(spline) => {
+            console.log('Spline loaded successfully');
+          }}
+        />
       </div>
       
       <div className="bio-container">
