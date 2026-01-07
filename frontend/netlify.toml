@@ -2,5 +2,16 @@
   publish = "frontend/build"
   command = "cd frontend && npm run build"
 
+# Force cache clearing for JavaScript files
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.js.map"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # Note: API redirects removed since site is now fully static
 # The site uses mock data and doesn't require API calls
