@@ -19,7 +19,6 @@ const WarRoomSection = () => {
     }
   };
 
-
   return (
     <section className="warroom-section" id="warroom">
       <div className="spline-background-warroom">

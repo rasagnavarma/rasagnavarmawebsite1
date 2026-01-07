@@ -18,7 +18,6 @@ const TimelineSection = () => {
     }
   };
 
-
   return (
     <section className="timeline-section" id="timeline">
       <div className="spline-background-timeline">

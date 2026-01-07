@@ -4,7 +4,6 @@ import { speakingEngagements, communityWork } from '../mock';
 import './CommunitySection.css';
 
 const CommunitySection = () => {
-
   return (
     <section className="community-section" id="community">
       <div className="community-container">

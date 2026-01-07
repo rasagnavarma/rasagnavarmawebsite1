@@ -4,7 +4,6 @@ import { skills, certifications } from '../mock';
 import './SkillsSection.css';
 
 const SkillsSection = () => {
-
   const skillCategories = [
     { title: 'Leadership Excellence', items: skills.leadership, icon: UsersIcon },
     { title: 'Salesforce Platforms', items: skills.platforms, icon: Code },
