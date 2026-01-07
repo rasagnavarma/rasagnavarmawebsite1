@@ -1,7 +1,13 @@
 [build]
+  base = "."
   publish = "frontend/build"
   command = "cd frontend && rm -rf node_modules/.cache build .cache && yarn install --force && yarn build"
   environment = { NODE_VERSION = "18", CI = "false" }
+  
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--force"
+  YARN_VERSION = "1.22.22"
 
 # Force cache clearing for JavaScript files
 [[headers]]
