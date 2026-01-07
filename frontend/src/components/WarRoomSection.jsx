@@ -1,33 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Spline from '@splinetool/react-spline';
-import axios from 'axios';
 import { AlertCircle, CheckCircle, Clock, Users, TrendingUp } from 'lucide-react';
-import { escalationMissions as mockEscalationMissions } from '../mock';
+import { escalationMissions } from '../mock';
 import './WarRoomSection.css';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
-const API = BACKEND_URL.endsWith('/api') ? BACKEND_URL : `${BACKEND_URL}/api`; // supports '', '/api', or full origin
 
 const WarRoomSection = () => {
   const [selectedMission, setSelectedMission] = useState(null);
-  const [escalationMissions, setEscalationMissions] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchMissions = async () => {
-      try {
-        const response = await axios.get(`${API}/missions`, { timeout: 5000 });
-        setEscalationMissions(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching missions:', error);
-        // Use mock data as fallback
-        setEscalationMissions(mockEscalationMissions);
-        setLoading(false);
-      }
-    };
-    fetchMissions();
-  }, []);
 
   const getStatusIcon = (status) => {
     return status === 'Resolved' ? <CheckCircle size={20} /> : <AlertCircle size={20} />;
@@ -41,15 +19,6 @@ const WarRoomSection = () => {
     }
   };
 
-  if (loading || escalationMissions.length === 0) {
-    return (
-      <section className="warroom-section" id="warroom">
-        <div className="warroom-container">
-          <div className="loading-text">Loading missions...</div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="warroom-section" id="warroom">

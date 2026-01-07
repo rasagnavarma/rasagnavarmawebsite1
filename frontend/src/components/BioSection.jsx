@@ -1,38 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Spline from '@splinetool/react-spline';
-import axios from 'axios';
 import { Target, Users, TrendingUp, Shield, Award, Brain, Globe } from 'lucide-react';
-import { bioData as mockBioData } from '../mock';
+import { bioData } from '../mock';
 import './BioSection.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
-const API = BACKEND_URL.endsWith('/api') ? BACKEND_URL : `${BACKEND_URL}/api`; // supports '', '/api', or full origin
-
 const BioSection = () => {
-  const [bioData, setBioData] = useState(null);
   const [visibleParagraphs, setVisibleParagraphs] = useState([]);
-  const [loading, setLoading] = useState(true);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const fetchBioData = async () => {
-      try {
-        const response = await axios.get(`${API}/bio`, { timeout: 5000 });
-        setBioData(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching bio data:', error);
-        // Use mock data as fallback
-        setBioData(mockBioData);
-        setLoading(false);
-      }
-    };
-    fetchBioData();
-  }, []);
-
-  useEffect(() => {
-    if (!bioData) return;
-    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -54,7 +30,7 @@ const BioSection = () => {
     }
 
     return () => observer.disconnect();
-  }, [bioData]);
+  }, []);
 
   const iconMap = {
     Target,
@@ -65,16 +41,6 @@ const BioSection = () => {
     Brain,
     Globe
   };
-
-  if (loading || !bioData) {
-    return (
-      <section className="bio-section" ref={sectionRef}>
-        <div className="bio-container">
-          <div className="loading-text">Loading...</div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="bio-section" ref={sectionRef}>

@@ -1,34 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import Spline from '@splinetool/react-spline';
-import axios from 'axios';
 import { ChevronRight, Building2, Calendar, TrendingUp } from 'lucide-react';
-import { timelineData as mockTimelineData } from '../mock';
+import { timelineData } from '../mock';
 import './TimelineSection.css';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
-const API = BACKEND_URL.endsWith('/api') ? BACKEND_URL : `${BACKEND_URL}/api`; // supports '', '/api', or full origin
 
 const TimelineSection = () => {
   const scrollRef = useRef(null);
   const [expandedCard, setExpandedCard] = useState(null);
-  const [timelineData, setTimelineData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchExperiences = async () => {
-      try {
-        const response = await axios.get(`${API}/experiences`, { timeout: 5000 });
-        setTimelineData(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching experiences:', error);
-        // Use mock data as fallback
-        setTimelineData(mockTimelineData);
-        setLoading(false);
-      }
-    };
-    fetchExperiences();
-  }, []);
 
   const handleScroll = (direction) => {
     if (scrollRef.current) {
@@ -40,15 +18,6 @@ const TimelineSection = () => {
     }
   };
 
-  if (loading || timelineData.length === 0) {
-    return (
-      <section className="timeline-section" id="timeline">
-        <div className="timeline-container">
-          <div className="loading-text">Loading timeline...</div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="timeline-section" id="timeline">

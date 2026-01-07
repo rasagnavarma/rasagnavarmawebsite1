@@ -1,47 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Mic, Users, Calendar, MapPin } from 'lucide-react';
-import { speakingEngagements as mockSpeakingEngagements, communityWork as mockCommunityWork } from '../mock';
+import { speakingEngagements, communityWork } from '../mock';
 import './CommunitySection.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
-const API = BACKEND_URL.endsWith('/api') ? BACKEND_URL : `${BACKEND_URL}/api`; // supports '', '/api', or full origin
-
 const CommunitySection = () => {
-  const [speakingEngagements, setSpeakingEngagements] = useState([]);
-  const [communityWork, setCommunityWork] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [speakingRes, communityRes] = await Promise.all([
-          axios.get(`${API}/speaking`, { timeout: 5000 }),
-          axios.get(`${API}/community`, { timeout: 5000 })
-        ]);
-        setSpeakingEngagements(speakingRes.data);
-        setCommunityWork(communityRes.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching community data:', error);
-        // Use mock data as fallback
-        setSpeakingEngagements(mockSpeakingEngagements);
-        setCommunityWork(mockCommunityWork);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return (
-      <section className="community-section" id="community">
-        <div className="community-container">
-          <div className="loading-text">Loading...</div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="community-section" id="community">

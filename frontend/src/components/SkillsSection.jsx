@@ -1,47 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Award, Code, Wrench, Target, Users as UsersIcon } from 'lucide-react';
-import { skills as mockSkills, certifications as mockCertifications } from '../mock';
+import { skills, certifications } from '../mock';
 import './SkillsSection.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
-const API = BACKEND_URL.endsWith('/api') ? BACKEND_URL : `${BACKEND_URL}/api`; // supports '', '/api', or full origin
-
 const SkillsSection = () => {
-  const [skills, setSkills] = useState(null);
-  const [certifications, setCertifications] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [skillsRes, certsRes] = await Promise.all([
-          axios.get(`${API}/skills`, { timeout: 5000 }),
-          axios.get(`${API}/certifications`, { timeout: 5000 })
-        ]);
-        setSkills(skillsRes.data);
-        setCertifications(certsRes.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching skills data:', error);
-        // Use mock data as fallback
-        setSkills(mockSkills);
-        setCertifications(mockCertifications);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
-
-  if (loading || !skills) {
-    return (
-      <section className="skills-section" id="skills">
-        <div className="skills-container">
-          <div className="loading-text">Loading...</div>
-        </div>
-      </section>
-    );
-  }
 
   const skillCategories = [
     { title: 'Leadership Excellence', items: skills.leadership, icon: UsersIcon },

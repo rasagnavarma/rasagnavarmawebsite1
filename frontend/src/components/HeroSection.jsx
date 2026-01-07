@@ -1,37 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { heroData as mockHeroData } from '../mock';
+import { heroData } from '../mock';
 import './HeroSection.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
-const API = BACKEND_URL.endsWith('/api') ? BACKEND_URL : `${BACKEND_URL}/api`; // supports '', '/api', or full origin
-
 const HeroSection = () => {
-  const [heroData, setHeroData] = useState(null);
   const [counters, setCounters] = useState([0, 0, 0, 0]);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchHeroData = async () => {
-      try {
-        const response = await axios.get(`${API}/profile`, { timeout: 5000 });
-        setHeroData(response.data);
-        setCounters(response.data.metrics.map(() => 0));
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching hero data:', error);
-        // Use mock data as fallback
-        setHeroData(mockHeroData);
-        setCounters(mockHeroData.metrics.map(() => 0));
-        setLoading(false);
-      }
-    };
-    fetchHeroData();
+    setCounters(heroData.metrics.map(() => 0));
   }, []);
 
   useEffect(() => {
-    if (heroData && !hasAnimated) {
+    if (!hasAnimated) {
       setHasAnimated(true);
       heroData.metrics.forEach((metric, index) => {
         const duration = 2000;
@@ -53,24 +33,7 @@ const HeroSection = () => {
         }, duration / steps);
       });
     }
-  }, [heroData, hasAnimated]);
-
-  if (loading) {
-    return (
-      <section className="hero-section">
-        <div className="hero-grid-pattern"></div>
-        <div className="hero-content">
-          <div className="hero-left">
-            <div className="loading-text">Loading...</div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (!heroData) {
-    return null;
-  }
+  }, [hasAnimated]);
 
   return (
     <section className="hero-section">
