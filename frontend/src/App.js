@@ -13,6 +13,9 @@ import Footer from "./components/Footer";
 function App() {
   useSmoothScroll();
   
+  // Verify static site - no API calls
+  console.log('Static site loaded - using mock data only');
+  
   return (
     <div className="App">
       <HeroSection />
