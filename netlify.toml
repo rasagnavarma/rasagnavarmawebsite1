@@ -1,8 +1,11 @@
 [build]
-  command = "echo 'No build required'"
+  base = "."
   publish = "."
+  command = "npm run build"
 
-# Force cache clearing for JavaScript files
+# Static HTML site - no build required
+# If you want to skip the build completely, change command to: "echo 'Static site'"
+
 [[headers]]
   for = "/*.js"
   [headers.values]
@@ -12,6 +15,3 @@
   for = "/*.js.map"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
-
-# Note: API redirects removed since site is now fully static
-# The site uses mock data and doesn't require API calls
