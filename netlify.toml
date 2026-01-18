@@ -1,10 +1,6 @@
 [build]
-  base = "."
+  command = "echo 'No build required'"
   publish = "."
-  command = "echo 'Static site - no build needed'"
-  
-[build.environment]
-  NODE_VERSION = "18"
 
 # Force cache clearing for JavaScript files
 [[headers]]
