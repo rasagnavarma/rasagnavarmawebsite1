@@ -1,15 +1,10 @@
 [build]
-  base = "frontend"
-  publish = "frontend/build"
-  command = "yarn build"
+  base = "."
+  publish = "."
+  command = "echo 'Static site - no build needed'"
   
 [build.environment]
   NODE_VERSION = "18"
-  NPM_FLAGS = "--force"
-  YARN_VERSION = "1.22.22"
-
-[functions]
-  directory = "frontend/netlify/functions"
 
 # Force cache clearing for JavaScript files
 [[headers]]
