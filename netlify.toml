@@ -1,7 +1,7 @@
 [build]
   base = "."
   publish = "."
-  command = "npm run build"
+  command = "echo 'Static HTML site - no build step needed'"
 
 # Static HTML site - no build required
 # If you want to skip the build completely, change command to: "echo 'Static site'"
