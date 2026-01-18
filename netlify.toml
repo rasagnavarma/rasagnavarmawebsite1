@@ -1,0 +1,24 @@
+[build]
+  base = "."
+  publish = "frontend/build"
+  command = "cd frontend && rm -rf node_modules/.cache build .cache && yarn install --force && yarn build"
+  environment = { NODE_VERSION = "18", CI = "false" }
+  
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--force"
+  YARN_VERSION = "1.22.22"
+
+# Force cache clearing for JavaScript files
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.js.map"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Note: API redirects removed since site is now fully static
+# The site uses mock data and doesn't require API calls
