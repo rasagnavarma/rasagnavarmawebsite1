@@ -1,13 +1,15 @@
 [build]
-  base = "."
+  base = "frontend"
   publish = "frontend/build"
-  command = "cd frontend && rm -rf node_modules/.cache build .cache && yarn install --force && yarn build"
-  environment = { NODE_VERSION = "18", CI = "false" }
+  command = "yarn build"
   
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--force"
   YARN_VERSION = "1.22.22"
+
+[functions]
+  directory = "frontend/netlify/functions"
 
 # Force cache clearing for JavaScript files
 [[headers]]
