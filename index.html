@@ -30,6 +30,14 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Three.js for 3D Graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP for Advanced Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
@@ -76,23 +84,19 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-                    <h3 class="text-primary mb-3">I'm</h3>
-                    <h1 class="display-3 mb-3">Buddharaju Rasagna Varma</h1>
-                    <h2 class="typed-text-output d-inline"></h2>
-                    <div class="typed-text d-none">People Leader, Operations Senior, Critical Incident Manager,Esclation Manager, Salesforce Engineer, Employee Impact Leader, Public Speaker</div>
-                    <div class="d-flex align-items-center pt-5">
-                        <a href="" class="btn btn-primary py-3 px-4 me-5">Download CV</a>
-                        <!--<button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="ms-4 mb-0 d-none d-sm-block">Contact Info</h5>-->
-                        <a href="#contact" class="btn btn-primary py-3 px-4 me-5">Contact Info</a>
+                    <h3 class="text-primary mb-3 fade-in-text">I'm</h3>
+                    <h1 class="display-3 mb-3 fade-in-text">Buddharaju Rasagna Varma</h1>
+                    <h2 class="typed-text-output d-inline fade-in-text"></h2>
+                    <div class="typed-text d-none">People Leader, Operations Senior, Critical Incident Manager, Esclation Manager, Salesforce Engineer, Employee Impact Leader, Public Speaker</div>
+                    <div class="d-flex align-items-center pt-5 fade-in-text">
+                        <a href="" class="btn btn-primary py-3 px-4 me-5 btn-hover">Download CV</a>
+                        <a href="#contact" class="btn btn-primary py-3 px-4 me-5 btn-hover">Contact Info</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="img/profilemain.png" alt="">
-                </br>
+                <div class="col-lg-6 position-relative">
+                    <!-- 3D Canvas for background animation -->
+                    <div id="canvas-3d" style="position: absolute; top: 0; left: 0; width: 100%; height: 400px; border-radius: 10px; overflow: hidden;"></div>
+                    <img class="img-fluid profile-image" src="img/profilemain.png" alt="">
                 </div>
             </div>
         </div>
@@ -134,6 +138,7 @@
                         <h3 class="lh-base mb-0">of working experience as a Salesforce Professional, Operations Leader & Employee Impact Champion</h3>
                     </div>
                     <p class="mb-4">Results-oriented Salesforce professional with 7+ years of experience, including 3 years leading teams of up to 16, and currently leading a team of 40 within Employee Impact India. Expertise in managing strategic initiatives, facilitating cross-functional collaboration, and driving customer satisfaction across the APAC region.</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>People Management & strategic Planning</p>
                     <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Operations & Escalation Management</p>
                     <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Leadership & Team Management</p>
                     <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Incident Management & Critical Issues</p>
@@ -165,7 +170,7 @@
                         <p class="mb-3">Managed critical cases and escalations during rotation shifts. Led team of 16 technical support professionals, driving high customer satisfaction and achieving 60% CSAT increase. Successfully maintained 99% uptime for Commerce Cloud platform while managing 5+ critical cases per shift.</p>
                     </div>
                     <div class="mb-4">
-                        <h5 class="border-bottom pb-2">Employee Impact Hub Leader (2023 - Present)</h5>
+                        <h5 class="border-bottom pb-2">Employee Impact Hub Leader (2023 - 2024)</h5>
                         <h6 class="text-primary mb-2">Salesforce</h6>
                         <p class="mb-3">Lead national Employee Impact initiatives across multiple Salesforce offices in India. Manage and oversee planning and execution of organization-wide events. Coordinate with executive leadership, manage scheduling and logistics, and deliver impact reports to leadership on program effectiveness.</p>
                     </div>
@@ -175,7 +180,7 @@
                         <p class="mb-3">Lead executive escalations and manage red account escalations for APAC region. Oversee SCI investment requests, drive Basecamp and red account management process improvements. Mentor APAC peers on investment requests and executive communications, developing comprehensive enablement resources.</p>
                     </div>
                     <div class="mb-4">
-                        <h5 class="border-bottom pb-2">Employee Impact India Lead (2023 - Present)</h5>
+                        <h5 class="border-bottom pb-2">Employee Impact India Lead (2024 - Present)</h5>
                         <h6 class="text-primary mb-2">Salesforce</h6>
                         <p class="mb-0">Lead multiple high-impact initiatives including Salesforce collaboration with UN, Adventure Club, VTO programs, and Women in Tech initiatives. Manage team of 40 Employee Impact Hub Leads and members across India. Champion employee-centric initiatives and build culture of inclusion while delivering regular impact reports to executive leadership.</p>
                     </div>
@@ -306,7 +311,7 @@
                                 <div class="col-sm-6">
                                     <h5>Employee Impact Hub Leader</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2023 - Present (1.5 Years)</p>
+                                    <p class="text-primary mb-1">2023 - 2024 (1 Years)</p>
                                     <h6 class="mb-0">Salesforce.com</h6>
                                 </div>
                                 <div class="col-sm-6">
@@ -318,7 +323,7 @@
                                 <div class="col-sm-6">
                                     <h5>Employee Impact India Lead</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2023 - Present (1.5 Years)</p>
+                                    <p class="text-primary mb-1">2024 - Present (1.5 Years)</p>
                                     <h6 class="mb-0">Salesforce.com</h6>
                                 </div>
                             </div>
