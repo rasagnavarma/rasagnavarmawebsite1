@@ -251,17 +251,18 @@
         });
     });
 
-    // Mouse Move Parallax Effect
-    document.addEventListener('mousemove', (e) => {
-        const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-        const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-        
-        gsap.to('.profile-image', {
-            x: moveX,
-            y: moveY,
-            duration: 0.5,
-            overwrite: 'auto'
-        });
+    // Enhanced scroll-based animations for profile image
+    gsap.to('.profile-image', {
+        scrollTrigger: {
+            trigger: '.profile-image',
+            start: 'top center',
+            end: 'center center',
+            scrub: 1,
+            markers: false
+        },
+        rotation: 5,
+        scale: 1.05,
+        duration: 1
     });
 
     
